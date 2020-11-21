@@ -10,6 +10,9 @@
                 background-color: #55b9f3; 
                 font-family: 'Muli', sans-serif;
                 padding-top: 2%;
+                background-image: url("Img-1.jpg");
+                background-repeat:initial;
+                background-size: cover;
             }
 
             .nav-bar{
