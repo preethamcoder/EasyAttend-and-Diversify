@@ -16,6 +16,9 @@ while (True):
     cont = input("Want to add another? (Y/N)")
     if cont == "N":
         break;
-
-epic = sorted(class_list, key=lambda k: (-class_list[k], k))
+print()
+print(class_list)
+print()
+print("This is the list sorted by race")
+epic = sorted(class_list, key=lambda k:(k['race']))
 print(epic)
