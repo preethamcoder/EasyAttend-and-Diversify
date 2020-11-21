@@ -104,8 +104,6 @@ session_start();
             padding: 1.2% 2%;
             width: 20%;
             margin-bottom: 5%;
-            box-shadow: inset 4px 4px 4px #489dcf,
-                inset -1px -1px 1px #62d5ff;
             clear: both;
             border-radius: 15px;
             border: none;
@@ -115,13 +113,15 @@ session_start();
             position: absolute;
         }
 
+        input[type=text]:active{
+            border: none;
+        }
+
         input[type="number"] {
             background: #ffffff;
             padding: 1.2% 2%;
             width: 20%;
             margin-bottom: 5%;
-            box-shadow: inset 4px 4px 4px #489dcf,
-                inset -1px -1px 1px #62d5ff;
             clear: both;
             border-radius: 15px;
             border: none;
@@ -140,19 +140,20 @@ session_start();
             padding: 2.5%;
             color: #ebebeb;
             font-size: 1.5vw;
-            font-family: "Courier New", Courier, monospace;
+            font-family: Tahoma, Geneva, sans-serif;
             text-align: center;
             text-decoration: none;
-            background: #55b9f3;
+            background: #c78cfa;
             border-radius: 15px;
-            box-shadow: 30px 30px 30px #489dcf,
-                -5px -5px 30px #62d5ff;
+            box-shadow: 10px 10px 10px #7228bd,
+                -5px -5px 12px #9c4ced;
             text-shadow:
                 0px 1px 3px rgba(000, 000, 000, 0.3),
                 0px 0px 0px rgba(255, 255, 255, 0);
-            position: static;
+            position: absolute;
             clear: both;
             border: none;
+            font-weight: strong;
         }
 
         input[type=submit]:hover {
@@ -160,6 +161,10 @@ session_start();
                 inset 5px 5px 5px rgba(0, 0, 0, 0.1);
         }
 
+        ::placeholder {
+            font-size: 17px;
+            font-family: Tahoma, Geneva, sans-serif;
+        }
 
         .welcome {
             font-size: 70px;
@@ -179,7 +184,7 @@ session_start();
     <a href="Homeschool_register.php" class="login-button login">Log-Out</a>
 
     <div class="welcome">
-        Welcome to <br>Name
+        Welcome to <br>EasyAttend
     </div>
     <form action="#" METHOD="POST" id="signup">
         <input type="text" name="name" value="" id="name" placeholder="First Name"><br>
@@ -187,7 +192,7 @@ session_start();
         <input type="number" min="100000000" max="9999999999" name="ID" placeholder="Student ID" style="margin-top: 30%;"><br>
 
         <input type="submit" value="Mark Me Present">
-
+        <!-- <input type="submit" value="Teachers Access Here" style="margin-left: 65%;"> -->
     </form>
 
 
