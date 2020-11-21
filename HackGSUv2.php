@@ -26,47 +26,6 @@
                 margin-top: 2%;
             }
 
-            .home {
-                width: fit-content;
-                padding: 0.5%;
-                color: rgb(255, 255, 255);
-                text-align: center;
-                font-size: 45px;
-                text-decoration: none;
-                text-shadow:
-                    0px 1px 3px rgba(000, 000, 000, 0.3),
-                    0px 0px 0px rgba(255, 255, 255, 0);
-                position: absolute;
-                clear: both;
-                margin-top: 27%;
-                margin-left: 45%;
-                border-radius: 50px;
-                background: linear-gradient(225deg, #8759ff, #714bdb);
-                box-shadow: -5px 5px 5px #422b7e,
-                            2px -2px 2px #ba7bff;
-            }
-
-            .home:hover{
-                background: linear-gradient(225deg, #8759ff, #714bdb);
-                box-shadow: -2px 2px 2px #ba7bff,
-                            2px -2px 2px #422b7e;
-                font-size: 40px;
-                outline: none;
-            }
-
-            .work{
-                width: fit-content;
-                padding: 30px;
-                margin-top: 35%;
-                margin-left: 38%;
-                border-radius: 50px;
-                background: linear-gradient(225deg, #8759ff, #714bdb);
-                box-shadow: -5px 5px 5px #422b7e,
-                            2px -2px 2px #ba7bff;
-                position: absolute;
-                font-size: 1.7vw;
-            }
-
             a{
                 text-decoration: none;
                 color: white;
@@ -77,12 +36,8 @@
     </head>
 
     <body>
-        <img src="cone.png">
-        <h1>WebPage Under Contruction</h1>
+        <center><h1>Welcome! You have been checked in!</h1></center>
         <a href="HackGSUv1" Method="GET" class="home">Go Back</a>
-        <div class="work">
-            <a href="#"><center>ID Entered! <br><br> Course Select: Mathematics <br> Mathematics: Adding 1s and 10s</center> </a>
-        </div>
 
 
     </body>
