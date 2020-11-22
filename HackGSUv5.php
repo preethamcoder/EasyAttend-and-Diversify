@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-
+<?php
+	console.log("First line");
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width-device-width, intial-scale = 1.0">
@@ -44,13 +46,7 @@
         .home {
             margin-left: 43%;
             margin-top: 2%;
-            background: #c78cfa;
-            border-radius: 25px;
-            border: 1px solid rgb(69, 9, 104);
-            box-shadow:
-                0px 5px 5px rgba(000, 000, 000, 0.1),
-                inset 0px 1px 0px rgba(255, 255, 255, 0.5);
-            color: white;
+            
         }
 
         .about {
@@ -61,6 +57,13 @@
         .course-select {
             margin-left: 62%;
             margin-top: 0%;
+			background: #c78cfa;
+            border-radius: 25px;
+            border: 1px solid rgb(69, 9, 104);
+            box-shadow:
+            0px 5px 5px rgba(000, 000, 000, 0.1),
+            inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+            color: white;
         }
 
         .login-button {
@@ -256,36 +259,26 @@
         Welcome to <br>EasyAttend
     </div>
     
-    <h2 id="result">Results</h2>
-    <label>Select Course</label>
-    <select id="courses-opt">
-        <option value="NONE">Select a Course</option>
-        <option value="CSC301">CSC1301</option>
-        <option value="CSC1302">CSC1302</option>
-        <option value="CSC2510">CSC2510</option>
-        <option value="CSC3320">CSC3320</option>
-        <option value="HON1000">HON1000</option>
-        <option value="MATH2211">MATH2211</option>
-        <option value="MATH2212">MATH2212</option>
-        <option value="MATH2215">MATH2215</option>
-        <option value="MATH2652">MATH2652</option>
-        <option value="ECON2105">ECON2105</option>
-    </select>
-
-    <script>
+	<form action="HackGSUv2.php" METHOD="POST">
+        <input type="text" name="crn" value="" id="name" placeholder="Enter Course Number" style = "margin-top: 25%;" required><br>
+		<input type="submit" value="Get Attendance">
+    
+    
+	
+		<!--<input type="submit"></input>-->
+	</form>
+    <!--<script>
         function GetSelectedValue() {
-            var e = document.getElementById("courses-opt");
+            var e = document.getElementById("courses_opt");
             var result = e.options[e.selectedIndex].value;
-
             document.getElementById("result").innerHTML = result;
         }
+		
 
-
-    </script>
-
+    </script>-->
     <br />
     <br />
-    <button type="button" onclick="GetSelectedValue()">Get Selected Value</button>
+    <!--<button type="button" onclick="GetSelectedValue()">Get Attendance</button>-->
 
 </body>
 
