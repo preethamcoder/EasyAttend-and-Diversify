@@ -1,3 +1,8 @@
-The pandemic has brought many things to a standstill. However, with everything being online, schools have faced difficulty tracking the attendance of its employees and students. We made an attempt to tackle this problem. 
+The pandemic has brought many things to a standstill. 
+However, with everything being online, schools have faced difficulty tracking the attendance of its employees and students. 
+We made an attempt to tackle this problem. 
 
-The project is implemented with a MySQL DataBase using Python Flask. On one end, the user checks in with their information to a class. On the other end the professor gets the information on who checked in. This program was implemented using Python Flask, MySQL, and Hypertext PreProcessor(PHP).  
+The project is implemented with a MySQL DataBase using Python Flask. 
+On one end, the user checks in with their information to a class. 
+On the other end the professor gets the information on who checked in. 
+This program was implemented using Python Flask, MySQL, and Hypertext PreProcessor(PHP).  
