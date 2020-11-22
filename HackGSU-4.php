@@ -58,7 +58,7 @@
 </head>
 
 <body>
-    <h1>You Checked In Earlier!</h1>
+    <h1>You Checked In Earlier For This Class!</h1>
     <a href="HackGSUv1" Method="GET" class="home">Go Back</a>
 </body>
 
