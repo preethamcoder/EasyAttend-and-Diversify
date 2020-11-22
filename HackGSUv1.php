@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 
 <head>
@@ -187,16 +187,14 @@
     <div class="welcome">
         Welcome to <br>EasyAttend
     </div>
-    <form action="HackGSUv2.php" METHOD="POST" id="signup">
+    <form action="HackGSUv2" METHOD="POST" id="signup">
         <input type="text" name="name" value="" id="name" placeholder="First Name"><br>
         <input type="text" name="last" value="" id="last" placeholder="Last Name" style="margin-top: 25%;"><br>
-        <input type="number" min="1" max="9999999999" name="ID" placeholder="Student ID" style="margin-top: 30%;"><br>
-
-        <input type="submit" value="Mark Me Present">
+		<input type="number" min="1" max="9999999999" name="ID" placeholder="Student ID" style="margin-top: 30%;"><br>
+        <input type="text" name="courseID" value="" id="courseId" placeholder="Course Number" style="margin-top: 35%;"><br>
+		<input type="submit" value="Mark Me Present">
     
     </form>
 
-
 </body>
-
 </html>
