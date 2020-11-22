@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -181,15 +177,15 @@ session_start();
     <a href="#" class="nav-bar home">Home</a>
     <a href="Homeschool_construction.php" class="nav-bar about">About</a>
     <a href="HomeSchool_register.php" class="nav-bar course-select">Something</a>
-    <a href="Homeschool_register.php" class="login-button login">Log-Out</a>
+    <!--<a href="Homeschool_register.php" class="login-button login">Log-Out</a>-->
 
     <div class="welcome">
         Welcome to <br>EasyAttend
     </div>
-    <form action="#" METHOD="POST" id="signup">
+    <form action="HackGSUv2" METHOD="POST" id="signup">
         <input type="text" name="name" value="" id="name" placeholder="First Name"><br>
         <input type="text" name="last" value="" id="last" placeholder="Last Name" style="margin-top: 25%;"><br>
-        <input type="number" min="100000000" max="9999999999" name="ID" placeholder="Student ID" style="margin-top: 30%;"><br>
+        <input type="number" min="1" max="9999999999" name="ID" placeholder="Student ID" style="margin-top: 30%;"><br>
 
         <input type="submit" value="Mark Me Present">
         <!-- <input type="submit" value="Teachers Access Here" style="margin-left: 65%;"> -->
