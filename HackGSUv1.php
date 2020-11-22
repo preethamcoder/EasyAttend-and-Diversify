@@ -180,8 +180,8 @@
 
 <body>
 
-    <a href="#" class="nav-bar home">Student Access</a>
-    <a href="Homeschool_construction.php" class="nav-bar about">Professor Access</a>
+    <a href="HackGSUv1" class="nav-bar home">Student Access</a>
+    <a href="HackGSUv5" class="nav-bar about">Professor Access</a>
     <!--<a href="Homeschool_register.php" class="login-button login">Log-Out</a>-->
 
     <div class="welcome">
@@ -192,9 +192,11 @@
         <input type="text" name="last" value="" id="last" placeholder="Last Name" style="margin-top: 25%;"><br>
 		<input type="number" min="1" max="9999999999" name="ID" placeholder="Student ID" style="margin-top: 30%;"><br>
         <input type="text" name="courseID" value="" id="courseId" placeholder="Course Number" style="margin-top: 35%;"><br>
-		<input type="submit" value="Mark Me Present">
+		<input type="submit" value="Check Me In">
     
     </form>
 
+
 </body>
+
 </html>
