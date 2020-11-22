@@ -5,7 +5,7 @@ from datetime import datetime
 from flask_mysqldb import MySQL
 #import mysql.connector as mysql
 app = Flask(__name__)
-app.config['MYSQL_HOST'] = 'preethamserver2020.mysql.database.azure.comt'
+app.config['MYSQL_HOST'] = 'preethamserver2020.mysql.database.azure.com'
 app.config['MYSQL_USER'] = 'Hackathon2020@preethamserver2020'
 app.config['MYSQL_PASSWORD'] = 'HackGSU2020'
 app.config['MYSQL_DB'] = 'hackGSU'
