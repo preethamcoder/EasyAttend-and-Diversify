@@ -14,7 +14,6 @@
             /* background-color: #cccccc; */
         }
 
-
         .nav-bar {
             width: fit-content;
             height: fit-content;
@@ -63,11 +62,43 @@
             margin-left: 62%;
             margin-top: 0%;
         }
-        #main-col{
-            width: 30%;
-            margin-top: 20%;
-            margin-left: 15%;
-            position: absolute;
+
+        .login-button {
+            width: fit-content;
+            height: fit-content;
+            padding: 0.5%;
+            float: right;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            font-size: 25px;
+            text-decoration: none;
+            text-shadow:
+                0px 1px 3px rgba(000, 000, 000, 0.3),
+                0px 0px 0px rgba(255, 255, 255, 0);
+            position: static;
+            clear: both;
+        }
+
+        .login {
+            margin-right: 0%;
+            margin-top: 0%;
+            width: 15%;
+            height: 3%;
+            overflow: hidden;
+            color: #f5f5f5;
+            background-image: url('https://www.flaticon.com/svg/static/icons/svg/1828/1828457.svg');
+            background-size: 15%;
+            background-repeat: no-repeat;
+            background-position: 10%;
+            padding-top: 0.5%;
+            padding-left: 3%;
+        }
+
+        .login:hover {
+            background-image: url('https://www.flaticon.com/svg/static/icons/svg/1828/1828457.svg');
+            background-size: 15%;
+            background-position: 15%;
+            color: #f73e3e;
         }
 
         input[type="text"] {
@@ -144,42 +175,119 @@
             position: absolute;
             color: rgb(255, 255, 255);
         }
+
+        label {
+            margin-top: 18%;
+            margin-left: 15%;
+            font-size: 35px;
+            position: absolute;
+            color: #ffffff;
+        }
+
+        select {
+            display: inline-block;
+            padding: 10px 20px;
+            width: 20%;
+            margin-top: 22%;
+            margin-left: 15%;
+            padding: 2.5%;
+            color: #000000;
+            font-size: 1.5vw;
+            font-family: Tahoma, Geneva, sans-serif;
+            text-align: center;
+            text-decoration: none;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 10px 10px 10px #7228bd,
+                -5px -5px 12px #9c4ced;
+            text-shadow:
+                0px 1px 3px rgba(000, 000, 000, 0.3),
+                0px 0px 0px rgba(255, 255, 255, 0);
+            position: absolute;
+            clear: both;
+            border: none;
+            font-weight: strong;
+        }
+
+        h2 {
+            margin-top: 20%;
+            margin-left: 50%;
+            position: absolute;
+        }
+
+        button{
+            margin-top: 25%;
+            margin-left: 15%;
+            width: 20%;
+            height: fit-content;
+            padding: 0.5%;
+            float: right;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            font-size: 25px;
+            text-decoration: none;
+            position: absolute;
+            clear: both;
+            background: #c78cfa;
+            border-radius: 25px;
+            border: 1px solid rgb(69, 9, 104);
+            box-shadow: 10px 10px 10px #7228bd,
+                -5px -5px 12px #9c4ced;
+            text-shadow:
+                0px 1px 3px rgba(000, 000, 000, 0.3),
+                0px 0px 0px rgba(255, 255, 255, 0);
+            color: white;
+        }
+
+        button:hover{
+            box-shadow: inset -3px -3px 3px rgba(255, 255, 255, 0.5),
+                inset 5px 5px 5px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 
 <body>
-    <a href="#" class="nav-bar home">Student Access</a>
-    <a href="Homeschool_construction.php" class="nav-bar about">Professor Access</a>
+
+    <a href="HackGSUv1.php" class="nav-bar home">Student Access</a>
+    <a href="HackGSUv5.php" class="nav-bar about">Professor Access</a>
     <!--<a href="Homeschool_register.php" class="login-button login">Log-Out</a>-->
 
     <div class="welcome">
         Welcome to <br>EasyAttend
     </div>
-    <div id="main-col">
-        <table>
-            <tr>
-                <td>Building</td>
-                <td>Room</td>
-            </tr>
-            <tr>
-                <td>
-                    <div id="building_select">
-                        <select>
-                        </select>
-                    </div>
-                </td>
-                
-            </tr>
-            <table>
-                <P>
-                    <!--button type="button" onclick="getRoomDetails()">Get Room Details</button-->
-                    <!--P-->
-                    <h3>Result:</h3>
-                    <div id="room_details">
-                    </div>
-    </div>
+    
+    <h2 id="result">Results</h2>
+    <label>Select Course</label>
+    <select id="courses-opt">
+        <option value="NONE">Select a Course</option>
+        <option value="CSC301">CSC1301</option>
+        <option value="CSC1302">CSC1302</option>
+        <option value="CSC2510">CSC2510</option>
+        <option value="CSC3320">CSC3320</option>
+        <option value="HON1000">HON1000</option>
+        <option value="MATH2211">MATH2211</option>
+        <option value="MATH2212">MATH2212</option>
+        <option value="MATH2215">MATH2215</option>
+        <option value="MATH2652">MATH2652</option>
+        <option value="ECON2105">ECON2105</option>
+    </select>
 
+    <script>
+        function GetSelectedValue() {
+            var e = document.getElementById("courses-opt");
+            var result = e.options[e.selectedIndex].value;
+
+            document.getElementById("result").innerHTML = result;
+        }
+
+
+    </script>
+
+    <br />
+    <br />
+    <button type="button" onclick="GetSelectedValue()">Get Selected Value</button>
 
 </body>
+
 
 </html>
