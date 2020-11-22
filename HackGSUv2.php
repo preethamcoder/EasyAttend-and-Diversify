@@ -9,7 +9,6 @@
         body {
             background-color: #7e53f3;
         }
-
         h1 {
             color: white;
             position: absolute;
@@ -17,14 +16,12 @@
             margin-top: 22%;
             font-size: 3.0vw;
         }
-
         img {
             width: 15%;
             position: absolute;
             margin-left: 42%;
             margin-top: 2%;
         }
-
         a {
             display: inline-block;
             padding: 10px 20px;
@@ -49,19 +46,16 @@
             border: none;
             font-weight: strong;
         }
-
         a:hover {
             box-shadow: inset -3px -3px 3px rgba(255, 255, 255, 0.5),
                 inset 5px 5px 5px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
-
 <body>
     <center>
         <h1>Welcome! You have been checked in!</h1>
     </center>
     <a href="HackGSUv1" Method="GET" class="home">Go Back</a>
 </body>
-
 </html>
