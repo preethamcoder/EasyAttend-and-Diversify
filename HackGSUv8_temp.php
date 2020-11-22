@@ -1,6 +1,6 @@
-<html>
 
-<head>
+        <html>
+        <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width-device-width, intial-scale = 1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -12,9 +12,9 @@
         }
 
         h1 {
-            color: white;
+            color: red;
             position: absolute;
-            margin-left: 40%;
+            margin-left: 35%;
             margin-top: 3%;
             font-size: 3.0vw;
         }
@@ -63,14 +63,18 @@
             background-color: #c78cfa;
         }
     </style>
+    <title>Attendance  </title>
 </head>
-
-<body>
-    <h1>Attendance</h1>
-    <table border="2" cellspacing="2" cellpadding="2">
-  
-    </table>
-    <a href="HackGSUv1" Method="GET" class="home">Go Back</a>
-</body>
-
-</html>
+        <body>
+        <h1>Attendance for MATH2212</h1>
+        <table border="2" cellspacing="2" cellpadding="2">
+        <tr>
+        <th><font face="Arial,Helvetica,sans-serif">ID</font></th>
+        <th><font face="Arial,Helvetica,sans-serif">First Name</font></th>
+        <th><font face="Arial,Helvetica,sans-serif">Last Name</font></th>
+        </tr>
+        </table>
+                        <a href="HackGSUv5" Method="GET" class="home">Go Back</a>
+                       </body>
+                       </html>
+                    
