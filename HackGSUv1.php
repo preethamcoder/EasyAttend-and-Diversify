@@ -28,12 +28,11 @@
                 0px 0px 0px rgba(255, 255, 255, 0);
             position: absolute;
             clear: both;
-            margin-top: 10%;
+            /* margin-top: 12%; */
         }
 
         .nav-bar:hover {
-            background: rgb(172, 5, 238);
-            background: linear-gradient(90deg, rgba(172, 5, 238, 1) 0%, rgba(255, 0, 108, 1) 100%);
+            background: #c78cfa;
             border-radius: 25px;
             border: 1px solid rgb(69, 9, 104);
             box-shadow:
@@ -44,12 +43,19 @@
 
         .home {
             margin-left: 43%;
-            margin-top: 0%;
+            margin-top: 2%;
+            background: #c78cfa;
+            border-radius: 25px;
+            border: 1px solid rgb(69, 9, 104);
+            box-shadow:
+                0px 5px 5px rgba(000, 000, 000, 0.1),
+                inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+            color: white;
         }
 
         .about {
-            margin-left: 52%;
-            margin-top: 0%;
+            margin-left:65%;
+            margin-top: 2%;
         }
 
         .course-select {
@@ -109,8 +115,8 @@
             position: absolute;
         }
 
-        input[type=text]:active{
-            border: none;
+        input[type=text]:focus {
+            outline: none;
         }
 
         input[type="number"] {
@@ -174,21 +180,20 @@
 
 <body>
 
-    <a href="#" class="nav-bar home">Home</a>
-    <a href="Homeschool_construction.php" class="nav-bar about">About</a>
-    <a href="HomeSchool_register.php" class="nav-bar course-select">Something</a>
+    <a href="#" class="nav-bar home">Student Access</a>
+    <a href="Homeschool_construction.php" class="nav-bar about">Professor Access</a>
     <!--<a href="Homeschool_register.php" class="login-button login">Log-Out</a>-->
 
     <div class="welcome">
         Welcome to <br>EasyAttend
     </div>
-    <form action="HackGSUv2" METHOD="POST" id="signup">
+    <form action="HackGSUv2.php" METHOD="POST" id="signup">
         <input type="text" name="name" value="" id="name" placeholder="First Name"><br>
         <input type="text" name="last" value="" id="last" placeholder="Last Name" style="margin-top: 25%;"><br>
         <input type="number" min="1" max="9999999999" name="ID" placeholder="Student ID" style="margin-top: 30%;"><br>
 
         <input type="submit" value="Mark Me Present">
-        <!-- <input type="submit" value="Teachers Access Here" style="margin-left: 65%;"> -->
+    
     </form>
 
 
