@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html>
-<?php
-	console.log("First line");
-?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width-device-width, intial-scale = 1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <style>
         body {
-            background: url("https://github.com/preethampython101/Hackathon2020/blob/main/Img-1.jpg?raw=true");
+            background: url("https://github.com/preethampython101/EasyAttend-and-Diversify/blob/main/EasyAttend/Img-1.jpg?raw=true");
             background-repeat: no-repeat;
             background-size: 100%;
             font-family: "Courier New", Courier, monospace;
-            /* background-color: #cccccc; */
+            
         }
 
         .nav-bar {
@@ -251,8 +248,8 @@
 
 <body>
 
-    <a href="HackGSUv1.php" class="nav-bar home">Student Access</a>
-    <a href="HackGSUv5.php" class="nav-bar about">Professor Access</a>
+    <a href="HackGSUv1" class="nav-bar home">Student Access</a>
+    <a href="HackGSUv5" class="nav-bar about">Professor Access</a>
     <!--<a href="Homeschool_register.php" class="login-button login">Log-Out</a>-->
 
     <div class="welcome">
@@ -275,8 +272,8 @@
         }
 		
     </script>-->
-    <br />
-    <br />
+    <br>
+    <br>
     <!--<button type="button" onclick="GetSelectedValue()">Get Attendance</button>-->
 
 </body>
