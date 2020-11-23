@@ -7,7 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <style>
         body {
-            background-color: #7e53f3;
+			background: url("https://github.com/preethampython101/EasyAttend-and-Diversify/blob/main/EasyAttend/Img-1.jpg?raw=true");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            font-family: "Courier New", Courier, monospace;
         }
         h1 {
             color: white;
