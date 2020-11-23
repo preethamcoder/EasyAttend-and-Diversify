@@ -1,20 +1,75 @@
-<!DOCTYPE html>
-<html>
-<?php
-	$username="root";
-	$password="Passw0rd$";
-	$database="hackGSU";
-	$dno=$_GET['crn'];
-	mysql_connect(localhost,$username,$password);
-	@mysql_select_db($database) or die( "Unable to select database");
-	$query="SELECT lname,salary FROM employee where dno=$dno";
-	$result=mysql_query($query);
-	$num=mysql_numrows($result);
-	mysql_close();
-?>
-<head>
+
+        <html>
+        <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, intial-scale = 1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            background: url("https://github.com/preethampython101/EasyAttend-and-Diversify/blob/main/EasyAttend/Img-1.jpg?raw=true");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        h1 {
+            color: red;
+            position: absolute;
+            margin-left: 35%;
+            margin-top: 3%;
+            font-size: 3.0vw;
+        }
+        img {
+            width: 15%;
+            position: absolute;
+            margin-left: 42%;
+            margin-top: 2%;
+        }
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            width: 15%;
+            margin-top: 25%;
+            margin-left: 40%;
+            padding: 2.0%;
+            color: #ebebeb;
+            font-size: 2.5vw;
+            font-family: Tahoma, Geneva, sans-serif;
+            text-align: center;
+            text-decoration: none;
+            background: #c78cfa;
+            border-radius: 15px;
+            box-shadow: 10px 10px 10px #7228bd,
+                -5px -5px 12px #9c4ced;
+            text-shadow:
+                0px 1px 3px rgba(000, 000, 000, 0.3),
+                0px 0px 0px rgba(255, 255, 255, 0);
+            position: absolute;
+            clear: both;
+            border: none;
+            font-weight: strong;
+        }
+        a:hover {
+            box-shadow: inset -3px -3px 3px rgba(255, 255, 255, 0.5),
+                inset 5px 5px 5px rgba(0, 0, 0, 0.1);
+        }
+        table{
+            margin-top: 8%;
+            margin-left: 37%;
+            position: absolute;
+            background-color: #c78cfa;
+        }
+    </style>
+    <title>Attendance  </title>
 </head>
-<body>
-	<p>Hello World! Here's the first registred guy: {{string_var}}. The second one is: {{string_var2}}</p>
-</body>
-</html>
+        <body>
+        <h1>Attendance for CSC3320</h1>
+        <table border="2" cellspacing="2" cellpadding="2">
+        <tr>
+        <th><font face="Arial,Helvetica,sans-serif">ID</font></th>
+        <th><font face="Arial,Helvetica,sans-serif">First Name</font></th>
+        <th><font face="Arial,Helvetica,sans-serif">Last Name</font></th>
+        </tr>
+        </table>
+                        <a href="HackGSUv5" Method="GET" class="home">Go Back</a>
+                       </body>
+                       </html>
+                    
