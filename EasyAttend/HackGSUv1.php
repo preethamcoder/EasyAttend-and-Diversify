@@ -6,8 +6,8 @@
     <meta name="viewport" content="width-device-width, intial-scale = 1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <style>
-        body {
-            background: url("https://github.com/preethampython101/Hackathon2020/blob/main/Img-1.jpg?raw=true");
+        body{
+            background: url("https://github.com/preethampython101/EasyAttend-and-Diversify/blob/main/EasyAttend/Img-1.jpg?raw=true");
             background-repeat: no-repeat;
             background-size: 100%;
             font-family: "Courier New", Courier, monospace;
@@ -78,7 +78,6 @@
             position: static;
             clear: both;
         }
-
         .login {
             margin-right: 0%;
             margin-top: 0%;
@@ -190,7 +189,7 @@
     <form action="HackGSUv2" METHOD="POST" id="signup">
         <input type="text" name="name" value="" id="name" placeholder="First Name"><br>
         <input type="text" name="last" value="" id="last" placeholder="Last Name" style="margin-top: 25%;"><br>
-		<input type="number" min="1" max="9999999999" name="ID" placeholder="Student ID" style="margin-top: 30%;"><br>
+		<input type="text" min="1" max="9999999999" name="ID" placeholder="Student ID" style="margin-top: 30%;"><br>
         <input type="text" name="courseID" value="" id="courseId" placeholder="Course Number" style="margin-top: 35%;"><br>
 		<input type="submit" value="Check Me In">
     
