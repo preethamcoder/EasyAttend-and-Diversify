@@ -5,9 +5,12 @@ from datetime import datetime
 from flask_mysqldb import MySQL
 #import mysql.connector as mysql
 app = Flask(__name__)
+#app.config['MYSQL_HOST'] = 'preethamserver2020.mysql.database.azure.com'
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'Passw0rd$'
+#app.config['MYSQL_USER'] = 'Hackathon2020@preethamserver2020'
+#app.config['MYSQL_PASSWORD'] = 'HackGSU2020'
 app.config['MYSQL_DB'] = 'hackGSU'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
@@ -84,10 +87,11 @@ def hackGSUv2():
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <style>
         body {
-            background: url("https://github.com/preethampython101/Hackathon2020/blob/main/Img-1.jpg?raw=true");
+            background: url("https://github.com/preethampython101/EasyAttend-and-Diversify/blob/main/EasyAttend/Img-1.jpg?raw=true");
             background-repeat: no-repeat;
             background-size: 100%;
         }
+
         h1 {
             color: red;
             position: absolute;
@@ -95,12 +99,14 @@ def hackGSUv2():
             margin-top: 3%;
             font-size: 3.0vw;
         }
+
         img {
             width: 15%;
             position: absolute;
             margin-left: 42%;
             margin-top: 2%;
         }
+
         a {
             display: inline-block;
             padding: 10px 20px;
@@ -125,10 +131,12 @@ def hackGSUv2():
             border: none;
             font-weight: strong;
         }
+
         a:hover {
             box-shadow: inset -3px -3px 3px rgba(255, 255, 255, 0.5),
                 inset 5px 5px 5px rgba(0, 0, 0, 0.1);
         }
+
         table{
             margin-top: 8%;
             margin-left: 37%;
@@ -160,10 +168,9 @@ def hackGSUv2():
                        </body>
                        </html>
                     '''
+        return htmlcode
         #print(htmlcode)
-        f = open("C:\\Users\\sthelluri1\\backupProject\\templates\\HackGSUv8_temp.php", "w")
-        f.write(htmlcode)
-        f.close()
+        
         #for i in p1:
             #if(i == "{" or i == "}"):
                 #pris += "\n"
@@ -176,7 +183,6 @@ def hackGSUv2():
         #fin = d.replace(d[57], "")
         #print(fin)
     #return render_template('HackGSUv8.php', string_var=fin, string_var2=p1)
-    return render_template('HackGSUv8_temp.php')
 
 if __name__ == '__main__':
    app.run(debug = True)
