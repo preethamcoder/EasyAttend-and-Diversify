@@ -53,11 +53,12 @@
             box-shadow: inset -3px -3px 3px rgba(255, 255, 255, 0.5),
                 inset 5px 5px 5px rgba(0, 0, 0, 0.1);
         }
-</style></head>
+    </style>
 <body>
     <center>
         <h1>Welcome! You have been checked in!</h1>
     </center>
     <a href="HackGSUv1" Method="GET" class="home">Go Back</a>
 </body>
+</head>
 </html>
