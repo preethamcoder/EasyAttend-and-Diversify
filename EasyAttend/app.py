@@ -18,14 +18,14 @@ app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 mysql = MySQL(app)
 @app.route("/")
 def hello():
-    return render_template('HackGSUv1.php')
+    return render_template('HackGSUv1.html')
 
 #@app.route("/HackGSUv2")
 #def hi():
 #    return render_template('HackGSUv2.html')
 @app.route("/HackGSUv5", methods=['GET', 'POST'])
 def HackGSUv5():
-    return render_template('HackGSUv5.php')
+    return render_template('HackGSUv5.html')
 @app.route("/HackGSUv2", methods=['GET', 'POST'])
 def HackGSUv2():
     if request.method == 'POST':
@@ -44,29 +44,29 @@ def HackGSUv2():
         if(qu == 0):
             t1 = cursor.execute("select * from EnrolledCourses where id = %s and crn = %s;", (idno, corn))
             if(t1 == 0):
-                return render_template('HackGSUv7.php')
+                return render_template('HackGSUv7.html')
             t2 = cursor.execute("select * from Courses where crn = %s and (day1 = %s or day2 = %s) and stime <= %s and etime >= %s;", (corn, daynowa, daynowa, x, x))
             if(t2 == 0):
-                return render_template('HackGSUv6.php')
+                return render_template('HackGSUv6.html')
             else:
                 cursor.execute("insert into Attendees (id, fname, lname, crn) values (%s,%s,%s, %s);", (idno, finame, laname, corn))
                 mysql.connection.commit()
-                return render_template('HackGSUv2.php')
+                return render_template('HackGSUv2.html')
         else:
-            return render_template('HackGSUv4.php')
+            return render_template('HackGSUv4.html')
     else:
-        return render_template('HackGSUv3.php')
+        return render_template('HackGSUv3.html')
     
-@app.route("/HackGSUv5.php", methods=['GET', 'POST'])
+@app.route("/HackGSUv5.html", methods=['GET', 'POST'])
 def heya():
-    return render_template('HackGSUv5.php')
+    return render_template('HackGSUv5.html')
 @app.route("/HackGSUv1", methods=['GET', 'POST'])
 def hiya():
-    return render_template('HackGSUv1.php')
-@app.route("/HackGSUv1.php", methods=['GET', 'POST'])
+    return render_template('HackGSUv1.html')
+@app.route("/HackGSUv1.html", methods=['GET', 'POST'])
 def hey():
-    return render_template('HackGSUv1.php')
-@app.route("/HackGSUv2.php", methods=['GET', 'POST'])
+    return render_template('HackGSUv1.html')
+@app.route("/HackGSUv2.html", methods=['GET', 'POST'])
 def hackGSUv2():
     if request.method == 'POST':
         cran = request.form['crn']
