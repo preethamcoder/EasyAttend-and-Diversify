@@ -1,34 +1,46 @@
-from flask import Flask, render_template, request
-from flask import request, redirect
+from flask import Flask, render_template, request, redirect
 from random import randint
 from datetime import datetime
-from flask_mysqldb import MySQL
-#import mysql.connector as mysql
+import mysql.connector as mysql
+
 app = Flask(__name__)
-#app.config['MYSQL_HOST'] = 'preethamserver2020.mysql.database.azure.com'
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'Passw0rd$'
-#app.config['MYSQL_USER'] = 'Hackathon2020@preethamserver2020'
-#app.config['MYSQL_PASSWORD'] = 'HackGSU2020'
-app.config['MYSQL_DB'] = 'hackGSU'
-app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
+db = mysql.connect(host="localhost", database="bro", user="root", passwd="mypassword", auth_plugin="caching_sha2_password")
+cursor = db.cursor()
+cursor.execute("use bro;")
 
-mysql = MySQL(app)
 @app.route("/")
 def hello():
     return render_template('HackGSUv1.html')
 
-#@app.route("/HackGSUv2")
-#def hi():
-#    return render_template('HackGSUv2.html')
 @app.route("/HackGSUv5", methods=['GET', 'POST'])
 def HackGSUv5():
-    return render_template('HackGSUv5.html')
+    return render_template("proflog.html")
+
+@app.route("/Error", methods=['GET'])
+def error():
+    return render_template('Error.html')
+
+@app.route("/test", methods=["GET", "POST"])
+def authenticate():
+    u_name = request.form["user"]
+    pass_w = request.form["pass"]
+    cursor.execute("select * from Professor where username=%s and password=%s;", (u_name, pass_w));
+    records = cursor.fetchall()
+    if len(records) != 0:
+        return render_template("HackGSUv5.html")
+    return render_template("proferror.html")
+
 @app.route("/HackGSUv2", methods=['GET', 'POST'])
 def HackGSUv2():
+    if len(request.form) == 1:
+        return hackGSUv2()
     if request.method == 'POST':
+        #client_ip = request.remote_addr
+        #cursor.execute("select * from Locations where ip=%s;", (client_ip,))
+        #records = cursor.fetchall()
+        #if len(records) == 0:
+            #return render_template('Error.html')
         finame = request.form['name']
         laname = request.form['last']
         idno = request.form['ID']
@@ -36,49 +48,50 @@ def HackGSUv2():
         now = datetime.now()
         daynowa = datetime.today().strftime('%A')
         x = now.strftime('%H:%M:%S')
-        cursor = mysql.connection.cursor()
-        ab = cursor.execute("select * from Information where id = %s and firstName = %s and lastName = %s;", (idno, finame, laname))  
-    if(ab != 0):
-        qu = cursor.execute("select * from Attendees where id = %s and fname = %s and lname = %s and crn = %s;", (idno, finame, laname, corn))
-        #print(qu)
-        if(qu == 0):
-            t1 = cursor.execute("select * from EnrolledCourses where id = %s and crn = %s;", (idno, corn))
-            if(t1 == 0):
-                return render_template('HackGSUv7.html')
-            t2 = cursor.execute("select * from Courses where crn = %s and (day1 = %s or day2 = %s) and stime <= %s and etime >= %s;", (corn, daynowa, daynowa, x, x))
-            if(t2 == 0):
-                return render_template('HackGSUv6.html')
+        cursor.execute(f"select * from Information where id = {idno} and firstName=\"{finame}\" and lastName=\"{laname}\";")
+        recos = cursor.fetchall()
+        if len(recos) == 0:
+            return render_template('HackGSUv3.html')
+        if(len(recos) != 0):
+            cursor.execute("select * from Attendees where id = %s and fname = %s and lname = %s and crn = %s;", (idno, finame, laname, corn,))
+            qu = cursor.fetchall()
+            if(len(qu) == 0):
+                cursor.execute("select * from EnrolledCourses where id = %s and crn = %s;", (idno, corn))
+                t1 = cursor.fetchall()
+                if(len(t1) == 0):
+                    return render_template('HackGSUv7.html')
+                cursor.execute("select * from Courses where crn = %s and (day1 = %s or day2 = %s) and stime <= %s and etime >= %s;", (corn, daynowa, daynowa, x, x,))
+                t2 = cursor.fetchall()
+                if(len(t2) == 0):
+                    return render_template('HackGSUv6.html')
+                else:
+                    cursor.execute("insert into Attendees (id, fname, lname, crn) values (%s, %s, %s, %s);", (idno, finame, laname, corn))
+                    db.commit()
+                    return render_template('HackGSUv2.html')
             else:
-                cursor.execute("insert into Attendees (id, fname, lname, crn) values (%s,%s,%s, %s);", (idno, finame, laname, corn))
-                mysql.connection.commit()
-                return render_template('HackGSUv2.html')
+                return render_template('HackGSUv4.html')
         else:
-            return render_template('HackGSUv4.html')
-    else:
-        return render_template('HackGSUv3.html')
-    
+            return render_template('HackGSUv3.html')
+
 @app.route("/HackGSUv5.html", methods=['GET', 'POST'])
 def heya():
     return render_template('HackGSUv5.html')
+
 @app.route("/HackGSUv1", methods=['GET', 'POST'])
 def hiya():
     return render_template('HackGSUv1.html')
+
 @app.route("/HackGSUv1.html", methods=['GET', 'POST'])
 def hey():
     return render_template('HackGSUv1.html')
+
 @app.route("/HackGSUv2.html", methods=['GET', 'POST'])
 def hackGSUv2():
     if request.method == 'POST':
         cran = request.form['crn']
-        #print(cran)
-        cursor1 = mysql.connection.cursor()
-        query = "select id, fname, lname from Attendees where crn = '"+cran+"'"
-        #print(query)
-        #cursor1.execute("select id, fname, lname from Attendees where crn = %s;", (cran,));
-        cursor1.execute(query)
-        records = cursor1.fetchall()
-        #print(len(records))
-        #print(records)
+        cursor.execute(f"select id, fname, lname from Attendees where crn = '{cran}';");
+        records = cursor.fetchall()
+        records = list(set(records))
         htmlcode = '''
         <html>
         <head>
@@ -156,11 +169,9 @@ def hackGSUv2():
         </tr>
         '''
         for rec in records:
-            #print(rec)
-            htmlcode += '''<tr>
-            <td><font face="Arial, Helvetica, sans-serif">'''+str(rec['id'])+'''</font></td>
-            <td><font face="Arial, Helvetica, sans-serif">'''+rec['fname']+'''</font></td>
-            <td><font face="Arial, Helvetica, sans-serif">'''+rec['lname']+'''</font></td>
+            htmlcode += '''<tr><td><font face="Arial, Helvetica, sans-serif">'''+str(rec[0])+'''</font></td>
+            <td><font face="Arial, Helvetica, sans-serif">'''+rec[1]+'''</font></td>
+            <td><font face="Arial, Helvetica, sans-serif">'''+rec[2]+'''</font></td>
             </tr>
             '''
         htmlcode += '''</table>
@@ -169,20 +180,6 @@ def hackGSUv2():
                        </html>
                     '''
         return htmlcode
-        #print(htmlcode)
-        
-        #for i in p1:
-            #if(i == "{" or i == "}"):
-                #pris += "\n"
-            #if(i != "{" or i != "}" or i != "(" or i != ")"):
-                #pris += i
-        #a = (pris.replace("{", ""))
-        #b = (a.replace("}", ""))
-        #c = (b.replace("(", ""))
-        #d = c.replace(")", "")
-        #fin = d.replace(d[57], "")
-        #print(fin)
-    #return render_template('HackGSUv8.php', string_var=fin, string_var2=p1)
 
 if __name__ == '__main__':
-   app.run(debug = True)
+   app.run(host='0.0.0.0', debug=True, port=9999)
